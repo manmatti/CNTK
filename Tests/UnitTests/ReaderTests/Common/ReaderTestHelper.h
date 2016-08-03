@@ -20,6 +20,8 @@ struct ReaderFixture
     ReaderFixture(string subPath = "", string envVariableErrorMessage = "")
     {
         BOOST_TEST_MESSAGE("Setup fixture");
+        BOOST_TEST_MESSAGE("Set two-digit format of exponent number");
+        _set_output_format(_TWO_DIGIT_EXPONENT);
         m_initialWorkingPath = boost::filesystem::current_path().generic_string();
         BOOST_TEST_MESSAGE("Current working directory: " + m_initialWorkingPath);
         fprintf(stderr, "Current working directory: %s\n", m_initialWorkingPath.c_str());
